@@ -6,9 +6,9 @@ function App() {
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:9000')
+    fetch('http://localhost:9000/found')
     .then(res => res.json())
-    .then(data => setMessage(data.Message))
+    .then(data => setMessage(data.name))
   })
 
 
@@ -18,7 +18,7 @@ function App() {
         Welcome to the Lost and Found Site!
       </header>
       <div>
-       <p> The server said : {message}</p>
+       <p> The first lost item is : {message}</p>
       </div>
     </div>
   );
